@@ -3,11 +3,20 @@ const initialState = {
   category: 0,
 };
 
-const filters = (state, action) => {
+const filters = (state = initialState, action) => {
   if (action.type === 'ACTIVE_SORT_BY') {
     return {
       ...state,
       sortBy: action.payload,
     };
   }
+  if (action.type === 'SET_CATEGORY') {
+    return {
+      ...state,
+      sortBy: action.payload,
+    };
+  }
+  return state;
 };
+
+export default filters;
