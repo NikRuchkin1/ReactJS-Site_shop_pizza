@@ -11,11 +11,13 @@ function App() {
       setPizzas(data.pizzas);
     });
     {
-      /*    fetch('http://localhost:3000/db.json')
+      /*
+      fetch('http://localhost:3000/db.json')
       .then((resp) => resp.json())
       .then((json) => {
       setPizzas(json.pizzas);
-      });*/
+      });
+    */
     }
   }, []);
   return (
