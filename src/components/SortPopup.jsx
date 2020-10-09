@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SortPopup = ({ items }) => {
+const SortPopup = React.memo(function SortPopup({ items }) {
   const [activeItem, setActiveItem] = React.useState(1);
   const onSelectItem = (index) => {
     setActiveItem(index);
@@ -58,6 +58,6 @@ const SortPopup = ({ items }) => {
       )}
     </div>
   );
-};
+});
 
 export default SortPopup;

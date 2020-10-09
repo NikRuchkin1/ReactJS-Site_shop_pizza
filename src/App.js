@@ -9,12 +9,6 @@ import filters from './redux/reducer/filters';
 
 function App() {
   const dispatch = useDispatch();
-  const { items } = useSelector(({ pizzas, filters }) => {
-    return {
-      items: pizzas.items,
-      sortBy: filters.sortBy,
-    };
-  });
   React.useEffect(() => {
     Axios.get('http://localhost:3000/db.json').then(({ data }) => {
       dispatch(setPizzas(data.pizzas));
@@ -26,7 +20,7 @@ function App() {
       <div className="wrapper">
         <Header />
         <div className="content">
-          <Route path="/Home" render={() => <Home items={items} />} exact />
+          <Route path="/Home" component={Home} exact />
           <Route path="/Cart" component={Cart} exact />
         </div>
       </div>
